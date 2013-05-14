@@ -19,6 +19,10 @@ Variables:
 * :math:`N^2` is a profile of Brunt-Vaisala buoyancy frequencies :math:`[s^{-2}]`
 * :math:`\alpha^2` are the eigenvalues
 
+Your assignment:
+
+.. image:: dynmodes/aims_allen_exercise_2.png
+
 
 Get the Python Code
 -------------------
@@ -29,6 +33,8 @@ and go to the :file:`dynmodes` directory.
 Please see the :ref:`GetThePythonCode` section in Exercise 1 if you haven't already cloned the `AIMS-workshop`_ repository from bitbucket.org.
 
 .. _AIMS-workshop: https://bitbucket.org/douglatornell/aims-workshop/
+
+Change to the :file:`aims-workshop/dynmodes` directory and start :program:`ipython` with plotting enabled.
 
 The Python functions we're going to use in this exercise are in :mod:`dynmodes.py`.
 
@@ -41,10 +47,6 @@ its inputs,
 and its outputs:
 
 .. autofunction:: dynmodes.dynmodes
-
-If you're interested,
-there is a deep dive into the functions that make up the :mod:`dynmodes.py` module later
-(:ref:`DeepDiveIntoDynmodesModule`).
 
 
 Analytical Test Cases
@@ -98,12 +100,43 @@ and the vertical density modes:
 
 .. code-block:: python
 
-    In []: plot_modes(Nsq, depth, 3, wmodes, pmodes, rmodes)
+    In []: dynmodes.plot_modes(Nsq, depth, 3, wmodes, pmodes, rmodes)
 
 .. image:: dynmodes/analytical_case1.png
 
+Another case with an analytical solution that you can try is:
 
-.. _DeepDiveIntoDynmodesModule:
+* 400 :math:`m` depth at 10 :math:`m` intervals
 
-Deep Dive into the :mod:`dynmodes.py` Module
---------------------------------------------
+* Uniform :math:`N^2 = 1 \times 10^{-6} \ s^{-2}`
+
+The analytical solution is:
+
+.. math::
+
+    w_m = w_o \sin(\frac{N z}{ce})
+
+where
+
+.. math::
+
+    ce = \frac{N H}{n \pi}, N = 1 \times 10^{-3} \ s^{-2}, H = 400 \ m
+
+
+Exploring Different Stratifications
+-----------------------------------
+
+There are 4 density profile files for you to explore:
+
+* :file:`SoG_S3.dens` is from the Strait of Georgia on the west coast of Canada
+
+* :file:`s105.dens` and :file:`s109.dens` are from Florida Straits
+
+* :file:`so550.dens` is from the South Atlantic offshore of Cape Town
+
+The :func:`dynmodes.read_density_profile` function will read those files and return depth and density arrays.
+You can view its docstring via the :program:`ipython` help feature:
+
+.. code-block:: python
+
+    In []: dynmodes.read_density_profile?
