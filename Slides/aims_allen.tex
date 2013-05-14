@@ -5,7 +5,7 @@
 
 % Theme for beamer presentation.
 \usetheme{Susan}
-\input{../E477/def}
+\input{../../E477/def}
 
 % Other themes include: beamerthemebars, beamerthemelined, 
 %                       beamerthemetree, beamerthemetreebars  
@@ -59,14 +59,27 @@ We will separate the density into three components:
 So that
 \[ \rho = \rho_o + \rho_* + \rho^{\prime} \]
 \end{frame}
+\begin{frame}
+
+\frametitle{Acknowledge Turbulence of Ocean}
+
+The ocean is turbulent: 
+\[ Re = UL/\nu\]
+$U \approx 0.3$m s$^{-1}$, $L \approx 100$ km, $\nu = 1 \times 10^{-6}$m$^2$s$^{-1}$, so $Re = 3 \times 10^{10}$
+
+So we should neglect molecular effects and include instead turbulent processes as discussed on Tuesday.  But in the ocean horizontal scales are much bigger than vertical scales and so turbulenet eddies are bigger and faster in the horizontal. So
+\[ \nu_{TH} \approx K_{TH}  \gg \nu_{TV} \approx K_{TV}\]
+\end{frame}
 
 \begin{frame}
-\frametitle{Conservation of Mass, Density Equation with Split Density}
+\frametitle{Conservation of Mass, Density Equation with Split Density, Turbulent Diffusion}
 Conservation of Volume\\
 \[ \dudx + \dvdy + \dwdz = 0 \]
 
 Density\\
-\[ \frac{\pa\rho^\prime}\dt + u \frac{\pa\rho^\prime}\dx + v \frac{\pa\rho^\prime}\dy -  \frac{\rho_o N^2}g w + w \frac{\pa\rho^\prime}\dz = K \nabla^2 \rho \]
+\[ \frac{\pa\rho^\prime}\dt + u \frac{\pa\rho^\prime}\dx + v \frac{\pa\rho^\prime}\dy -  \frac{\rho_o N^2}g w + w \frac{\pa\rho^\prime}\dz = K_{TH} \nabla_H^2 \rho^\prime + K_{TV}\frac{\pa^2 \rho^\prime}{\dz^2} \]
+
+where $\nabla_H^2 = \pa^2/\dx^2 + \pa^2/\dy^2$.
 \end{frame}
 
 \begin{frame}
@@ -96,14 +109,19 @@ $\beta = 2 \Omega \cos \phi_o a^{-1}$ and $\beta_R = 2 \Omega \sin \phi_o a^{-1}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Momentum Equations with Beta-Approximation}   % Insert frame title between curly braces
+  \frametitle{Momentum Equations with Beta-Approximation, Turbulent Viscosity}   % Insert frame title between curly braces
 Momentum Equations: East, North and Vertical\\
 
 
 
-\[ \dudt + u \dudx + v \dudy + w \dudz -f_o v - \beta y v +f_{RO} w - \beta_R y w = -\frac{1}{\rho_o} \dpdx + \nu \nabla^2 u\] 
-\[ \dvdt + u \dvdx + v \dvdy + w\dvdz + f_o u + \beta y u = -\frac{1}{\rho_o} \dpdy + \nu \nabla^2 v\]
-\[ \dwdt + u \dwdx + v \dwdy + w \dwdz - f_{RO} u + \beta_R y u = -\frac{1}{\rho_o} \dpdz - \frac{\rho^\prime}{\rho_o}g + \nu \nabla^2 w \]
+\begin{eqnarray*} \dudt + u \dudx + v \dudy + w \dudz -f_o v - \beta y v +f_{RO} w - \beta_R y w &&\\
+= -\frac{1}{\rho_o} \dpdx + \nu_{TH} \nabla_H^2 u + \nu_{TV}\frac{\pa^2 u}{\dz^2}&&
+\end{eqnarray*} 
+\[ \dvdt + u \dvdx + v \dvdy + w\dvdz + f_o u + \beta y u = -\frac{1}{\rho_o} \dpdy + \nu_{TH} \nabla_H^2 v + \nu_{TV}\frac{\pa^2 v}{\dz^2}\]
+\begin{eqnarray*}
+\dwdt + u \dwdx + v \dwdy + w \dwdz - f_{RO} u + \beta_R y u = &&\\
+-\frac{1}{\rho_o} \dpdz - \frac{\rho^\prime}{\rho_o}g + \nu_{TH} \nabla_H^2 w + \nu_{TV}\frac{\pa^2 w}{\dz^2} &&
+\end{eqnarray*}
 
 
 
@@ -151,7 +169,6 @@ $\beta$ &  10$^{-11}$ (ms)$^{-1}$\\
 $\beta_R$ &  10$^{-11}$ (ms)$^{-1}$\\
 $\rho_o$ & $10^3$ kg m$^{-3}$\\
 $|N^2|$ & $10^{-4}$s$^{-2}$\\
-$\nu$ & $10^{-6}$ m$^{2}$ s$^{-1}$\\
 K & $10^{-7}$ m$^{2}$ s$^{-1}$\\
 \hline
 \end{tabular}
@@ -162,6 +179,14 @@ T & $3 \times 10^5$ s\\
 X & 10$^5$ m\\
 Y == X  & 10$^5$ m\\
 Z & 1000 m\\
+\hline
+\end{tabular}
+\begin{tabular}{cc}
+\hline
+$\nu_{TH}$ &$10^{2}$m$^{2}$s$^{-1}$\\
+$K_{TH} == \nu_{TH} $&$10^{2}$m$^{2}$s$^{-1}$\\
+$\nu_{TV} $&$10^{-1}$m$^{2}$s$^{-1}$\\
+$K_{TV} == \nu_{TV}  $&$10^{-1}$m$^{2}$s$^{-1}$\\
 \hline
 \end{tabular}
 \end{columns}\vspace{0.2in}
