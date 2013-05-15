@@ -90,7 +90,7 @@ Time Rate of Change + Advection + Coriolis = Pressure Gradient + Buoyancy (verti
 
 \[ \dudt + u \dudx + v \dudy + w \dudz -fv +f_R w = -\frac{1}{\rho_o} \dpdx + \nu \nabla^2 u\] 
 \[ \dvdt + u \dvdx + v \dvdy + w\dvdz + fu = -\frac{1}{\rho_o} \dpdy + \nu \nabla^2 v\]
-\[ \dwdt + u \dwdx + v \dwdy + w \dwdz - f_R u = -\frac{1}{\rho_o} \dpdz - \frac{\rho^\prime}{\rho_o} + \nu \nabla^2 w \]
+\[ \dwdt + u \dwdx + v \dwdy + w \dwdz - f_R u = -\frac{1}{\rho_o} \dpdz - \frac{\rho^\prime}{\rho_o}g + \nu \nabla^2 w \]
 
 where $p$ is pressure, $f = 2\Omega \sin \phi$ and $f_R = 2 \Omega \cos \phi$ and $\nu$ is the kinematic viscosity.
 
@@ -165,11 +165,10 @@ To complete the scaling we also need space and time scales and sizes for the par
 g & 10 m s$^{-2}$\\
 $f_o$ & 10$^{-4}$ s$^{-1}$\\
 $f_{Ro}$ & 10$^{-4}$ s$^{-1}$\\
-$\beta$ &  10$^{-11}$ (ms)$^{-1}$\\
-$\beta_R$ &  10$^{-11}$ (ms)$^{-1}$\\
+$\beta$ & $2 \times 10^{-11}$ (ms)$^{-1}$\\
+$\beta_R$ & $2 \times 10^{-11}$ (ms)$^{-1}$\\
 $\rho_o$ & $10^3$ kg m$^{-3}$\\
 $|N^2|$ & $10^{-4}$s$^{-2}$\\
-K & $10^{-7}$ m$^{2}$ s$^{-1}$\\
 \hline
 \end{tabular}
 \column{2in}
@@ -201,7 +200,7 @@ Because the horizontal Coriolis terms ($fu$, $fv$) are large terms in the equati
 \begin{itemize}
 \item Rossby Number : $Ro = U/(fL)$
 \item temporal Rossby Number : $Ro_t = 1/(fT)$
-\item Ekman Number : $Ek = \nu /(f Z^2)$
+\item Ekman Number : $Ek = \nu_{TV} /(f Z^2)$
 \item Beta Number : $Beta = \beta X / f$
 \end{itemize}
 
@@ -334,7 +333,7 @@ Ro_t \dudt + Ro \left( u\dudx + v\dudy \right) - v - Beta\, y v = -\dpdx
 Ro_t \dvdt + Ro \left( u\dvdx + v\dvdy \right) + u + Beta\, y u = -\dpdy 
 \]
 \[
-\dpdz = \rho
+\dpdz = - \rho
 \]
 No other terms are significant within an order of 30 in the vertical momentum equation.
 
