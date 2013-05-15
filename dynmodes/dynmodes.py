@@ -170,7 +170,7 @@ def plot_modes(Nsq, depth, nmodes, wmodes, pmodes, rmodes):
         ax.ticklabel_format(style='sci', scilimits=(3, 3), axis='x')
         ax.set_ylabel('z')
         ax.set_xlabel(title)
-        ax.legend()
+        ax.legend(loc='best')
 
 
 def read_density_profile(filename):
