@@ -166,7 +166,7 @@ def plot_modes(Nsq, depth, nmodes, wmodes, pmodes, rmodes):
         modes, subplot, title = mode_set
         ax = fig.add_subplot(2, 2, subplot)
         for i in xrange(nmodes):
-            ax.plot(modes[i], -depth, label='mode {}'.format(i))
+            ax.plot(modes[i], -depth, label='mode {}'.format(i + 1))
         ax.ticklabel_format(style='sci', scilimits=(3, 3), axis='x')
         ax.set_ylabel('z')
         ax.set_xlabel(title)
