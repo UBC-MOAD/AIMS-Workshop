@@ -16,7 +16,7 @@ Variables:
 
 * :math:`z` is the vertical coordinate, measured in :math:`[m]`
 * :math:`w_m` are the vertical velocity modes
-* :math:`N^2` is a profile of Brunt-Vaisala buoyancy frequencies :math:`[s^{-2}]`
+* :math:`N^2` is a profile of Brunt-Vaisala (buoyancy) frequencies squared :math:`[s^{-2}]`
 * :math:`\alpha^2` are the eigenvalues
 
 Your assignment:
@@ -140,3 +140,5 @@ You can view its docstring via the :program:`ipython` help feature:
 .. code-block:: python
 
     In []: dynmodes.read_density_profile?
+
+The :func:`dynmodes.density2Nsq` function will convert a density profile to a profile of Brunt-Vaisala (buoyancy) frequencies squared.
