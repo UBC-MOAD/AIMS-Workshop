@@ -23,11 +23,10 @@ def thermal_wind(
     :type stn2_profile: string
 
     :arg no_motion_depth: Depth at which level of no motion boundary condition
-                          occurs
+                          occurs in [m]
     :type no_motion_depth: number
 
-    :arg surface_delta: Surface height difference between the 2 station
-                        boundary condition
+    :arg surface_delta: Surface height difference between the 2 station in [m]
     :type surface_delta: number
 
     :returns: :obj:`(depth, v_vel)` Profile of horizontal velocity across
