@@ -97,6 +97,8 @@ An Example
 
 .. code-block:: python
 
+    In []: import thermal_wind
+
     In []: depth, v = thermal_wind.thermal_wind('s109.dens', 's105.dens', surface_delta=0)
 
     In []: thermal_wind.plot_velocity_profile(depth, v)
