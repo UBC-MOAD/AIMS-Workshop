@@ -94,7 +94,8 @@ def build_d2dz2_matrix(depth):
 def clean_up_modes(eigenvalues, wmodes, nmodes):
     """Exclude complex-valued and near-zero/negative eigenvalues and their modes.
     Sort the eigenvalues and mode by increasing eigenvalue magnitude,
-    and truncate the results to the number of modes that were requested.
+    truncate the results to the number of modes that were requested,
+    and convert the modes from complex to real numbers.
 
     :arg eigenvalues: Eigenvalues
     :type eigenvalues: :class:`numpy.ndarray`
@@ -110,7 +111,8 @@ def clean_up_modes(eigenvalues, wmodes, nmodes):
     """
     # Transpose modes to that they can be handled as an array of vectors
     wmodes = wmodes.transpose()
-    # Filter out complex-values and small/negative eigenvalues and corresponding modes
+    # Filter out complex-values and small/negative eigenvalues
+    # and corresponding modes
     mask = np.imag(eigenvalues) == 0
     eigenvalues = eigenvalues[mask]
     wmodes = wmodes[mask]
@@ -121,7 +123,7 @@ def clean_up_modes(eigenvalues, wmodes, nmodes):
     index = np.argsort(eigenvalues)
     eigenvalues = eigenvalues[index[:nmodes]]
     wmodes = wmodes[index[:nmodes]]
-    return eigenvalues, wmodes
+    return eigenvalues, wmodes.real
 
 
 def plot_modes(Nsq, depth, nmodes, wmodes, pmodes, rmodes):
