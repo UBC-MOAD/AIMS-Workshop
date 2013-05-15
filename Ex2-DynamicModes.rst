@@ -103,6 +103,7 @@ and the vertical density modes:
     In []: dynmodes.plot_modes(Nsq, depth, 3, wmodes, pmodes, rmodes)
 
 .. image:: dynmodes/analytical_case1.png
+   :width: 800
 
 Another case with an analytical solution that you can try is:
 
