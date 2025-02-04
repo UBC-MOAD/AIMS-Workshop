@@ -138,8 +138,9 @@ There are 4 density profile files for you to explore:
 The :func:`dynmodes.read_density_profile` function will read those files and return depth and density arrays.
 You can view its docstring via the :program:`ipython` help feature:
 
-.. code-block:: python
+.. We have to use the `text` lexer because the `python` lexer doesn't understand the `?` character.
+.. code-block:: text
 
-    In []: dynmodes.read_density_profile?
+   In []: dynmodes.read_density_profile?
 
 The :func:`dynmodes.density2Nsq` function will convert a density profile to a profile of Brunt-Vaisala (buoyancy) frequencies squared.
