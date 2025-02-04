@@ -30,11 +30,11 @@ Get the Python Code
 Open up a terminal window and an editor,
 and go to the :file:`dynmodes` directory.
 
-Please see the :ref:`GetThePythonCode` section in Exercise 1 if you haven't already cloned the `AIMS-workshop`_ repository from bitbucket.org.
+Please see the :ref:`GetThePythonCode` section in Exercise 1 if you haven't already cloned the `AIMS-Workshop`_ repository from GitHub.
 
-.. _AIMS-workshop: https://bitbucket.org/douglatornell/aims-workshop/
+.. _AIMS-Workshop: https://github.com/UBC-MOAD/AIMS-Workshop
 
-Change to the :file:`aims-workshop/dynmodes` directory and start :program:`ipython` with plotting enabled.
+Change to the :file:`AIMS-Workshop/dynmodes/` directory and start :program:`ipython` with plotting enabled.
 
 The Python functions we're going to use in this exercise are in :mod:`dynmodes.py`.
 

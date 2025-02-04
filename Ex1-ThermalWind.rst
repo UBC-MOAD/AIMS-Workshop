@@ -65,8 +65,8 @@ and start :program:`ipython` with plotting enabled:
 
 .. code-block:: sh
 
-    $ hg clone https://douglatornell@bitbucket.org/douglatornell/aims-workshop
-    $ cd aims-workshop
+    $ git clone git@github.com:UBC-MOAD/AIMS-Workshop.git
+    $ cd AIMS-Workshop
     $ ipython --pylab
 
 The Python functions we're going to use in this exercise are in :mod:`thermal_wind.py`.
