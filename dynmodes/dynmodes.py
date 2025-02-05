@@ -10,7 +10,7 @@ def dynmodes(Nsq, depth, nmodes):
     """Calculate the 1st nmodes ocean dynamic vertical modes
     given a profile of Brunt-Vaisala (buoyancy) frequencies squared.
 
-    Based on http://woodshole.er.usgs.gov/operations/sea-mat/klinck-html/dynmodes.html
+    Based on https://github.com/sea-mat/dynmodes/blob/master/dynmodes.m
     by John Klinck, 1999.
 
     :arg Nsq: Brunt-Vaisala (buoyancy) frequencies squared in [1/s^2]
@@ -165,7 +165,7 @@ def plot_modes(Nsq, depth, nmodes, wmodes, pmodes, rmodes):
     for mode_set in mode_sets:
         modes, subplot, title = mode_set
         ax = fig.add_subplot(2, 2, subplot)
-        for i in xrange(nmodes):
+        for i in range(nmodes):
             ax.plot(modes[i], -depth, label='mode {}'.format(i + 1))
         ax.ticklabel_format(style='sci', scilimits=(3, 3), axis='x')
         ax.set_ylabel('z')

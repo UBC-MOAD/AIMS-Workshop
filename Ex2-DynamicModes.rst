@@ -1,7 +1,7 @@
 Exercise 2 - Calculation of Vertical Dynamic Ocean Modes
 ========================================================
 
-Based on http://woodshole.er.usgs.gov/operations/sea-mat/klinck-html/dynmodes.html by John Klinck, 1999.
+Based on https://github.com/sea-mat/dynmodes/blob/master/dynmodes.m by John Klinck, 1999.
 
 The goal is to calculate and explore the vertical dynamic modes using a Python function that calculates numerical solutions of the generalized eigenvalue problem expressed by:
 
@@ -30,11 +30,11 @@ Get the Python Code
 Open up a terminal window and an editor,
 and go to the :file:`dynmodes` directory.
 
-Please see the :ref:`GetThePythonCode` section in Exercise 1 if you haven't already cloned the `AIMS-workshop`_ repository from bitbucket.org.
+Please see the :ref:`GetThePythonCode` section in Exercise 1 if you haven't already cloned the `AIMS-Workshop`_ repository from GitHub.
 
-.. _AIMS-workshop: https://bitbucket.org/douglatornell/aims-workshop/
+.. _AIMS-Workshop: https://github.com/UBC-MOAD/AIMS-Workshop
 
-Change to the :file:`aims-workshop/dynmodes` directory and start :program:`ipython` with plotting enabled.
+Change to the :file:`AIMS-Workshop/dynmodes/` directory and start :program:`ipython` with plotting enabled.
 
 The Python functions we're going to use in this exercise are in :mod:`dynmodes.py`.
 
@@ -138,8 +138,9 @@ There are 4 density profile files for you to explore:
 The :func:`dynmodes.read_density_profile` function will read those files and return depth and density arrays.
 You can view its docstring via the :program:`ipython` help feature:
 
-.. code-block:: python
+.. We have to use the `text` lexer because the `python` lexer doesn't understand the `?` character.
+.. code-block:: text
 
-    In []: dynmodes.read_density_profile?
+   In []: dynmodes.read_density_profile?
 
 The :func:`dynmodes.density2Nsq` function will convert a density profile to a profile of Brunt-Vaisala (buoyancy) frequencies squared.

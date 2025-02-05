@@ -36,7 +36,7 @@ Also provided are a pair of density profiles at stations in the Gulf Stream wher
 These data were collected under the world project "WOCE" and are part of a large collection of data that is `freely available on the web`_.
 The stations are at 26ºN and are 36.89 km apart.
 
-.. _freely available on the web: http://www-pord.ucsd.edu/whp_atlas/
+.. _freely available on the web: https://woceatlas.ucsd.edu/index.html
 
 Your assignment:
 
@@ -58,15 +58,15 @@ editor,
 and file navigator panes.
 
 In the terminal,
-clone the Mercurial repository that contains the code and data
+clone the Git repository that contains the code and data
 (as well as a PDF of this morning's slides),
 change to the :file:`thermal_wind` directory,
 and start :program:`ipython` with plotting enabled:
 
 .. code-block:: sh
 
-    $ hg clone https://douglatornell@bitbucket.org/douglatornell/aims-workshop
-    $ cd aims-workshop
+    $ git clone git@github.com:UBC-MOAD/AIMS-Workshop.git
+    $ cd AIMS-Workshop
     $ ipython --pylab
 
 The Python functions we're going to use in this exercise are in :mod:`thermal_wind.py`.

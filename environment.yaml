@@ -1,0 +1,24 @@
+# conda environment description file for the AIMS Workshop notebooks and
+# Python modules
+#
+#    $ conda env create -f environment.yaml
+#    $ conda activate aims-workshop
+
+  name: aims-workshop
+
+  channels:
+    - conda-forge
+    - nodefaults
+
+  dependencies:
+    - python=3.13
+    
+    - matplotlib
+    - numpy
+    - scipy
+
+    - ipython
+    - jupyterlab
+    - notebook
+
+    - sphinx
