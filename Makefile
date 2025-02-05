@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 BUILDDIR      = _build
-EOS_HOST	  = sable
+EAOS_HOST	  = salish
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -14,7 +14,7 @@ endif
 
 # Internal variables.
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) .
-EOS_WEB = /home/sallen/public_html/AIMS-workshop/
+EAOS_WEB = /home/sallen/public_html/AIMS-workshop/
 
 .PHONY: help clean html rsyn-eos
 
@@ -32,7 +32,7 @@ html:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-rsync-eos:
+rsync-eaos:
 	chmod -R g+w _build/html
-	rsync -rlpgoDvhz _build/html/ $(EOS_HOST):$(EOS_WEB)
+	rsync -rlpgoDvhz _build/html/ $(EAOS_HOST):$(EAOS_WEB)
 	@echo "rsync to EOS public web complete."
