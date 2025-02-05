@@ -35,4 +35,4 @@ html:
 rsync-eaos:
 	chmod -R g+w _build/html
 	rsync -rlpgoDvhz _build/html/ $(EAOS_HOST):$(EAOS_WEB)
-	@echo "rsync to EOS public web complete."
+	@echo "rsync to EOAS public web complete."
