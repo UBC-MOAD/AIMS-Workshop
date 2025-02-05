@@ -10,7 +10,7 @@ def dynmodes(Nsq, depth, nmodes):
     """Calculate the 1st nmodes ocean dynamic vertical modes
     given a profile of Brunt-Vaisala (buoyancy) frequencies squared.
 
-    Based on http://woodshole.er.usgs.gov/operations/sea-mat/klinck-html/dynmodes.html
+    Based on https://github.com/sea-mat/dynmodes/blob/master/dynmodes.m
     by John Klinck, 1999.
 
     :arg Nsq: Brunt-Vaisala (buoyancy) frequencies squared in [1/s^2]

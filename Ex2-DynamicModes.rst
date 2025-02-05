@@ -1,7 +1,7 @@
 Exercise 2 - Calculation of Vertical Dynamic Ocean Modes
 ========================================================
 
-Based on http://woodshole.er.usgs.gov/operations/sea-mat/klinck-html/dynmodes.html by John Klinck, 1999.
+Based on https://github.com/sea-mat/dynmodes/blob/master/dynmodes.m by John Klinck, 1999.
 
 The goal is to calculate and explore the vertical dynamic modes using a Python function that calculates numerical solutions of the generalized eigenvalue problem expressed by:
 
